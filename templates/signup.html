@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LNCT@Life Signup</title>
+	<link rel="stylesheet" type="text/css" href="static/css/signup.css">
+	<link rel="stylesheet" href="static/plugins/bootstrap/bootstrap.min.css">
+
+</head>
+<body class="main">
+
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-dark fade show" id='msg'>
+            <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+            <strong>{{ message|safe }} </strong>
+            
+          </div>            
+        {% endfor %}
+    {% endif %}
+
+<form action='register' method='post'>    
+    {% csrf_token %}
+    <div class="wrapper">
+    <h1 id="greet">Sign up for LNCT@LIFE.</h1>
+	<div class="header"> 
+		<ul><li class="active form_1_progessbar"><div><p>1</p></div></li>
+			<li class="form_2_progessbar"><div><p>2</p></div></li>
+			<li class="form_3_progessbar"><div><p>3</p></div></li>
+		</ul>
+	</div>
+
+    <div class="form_wrap">
+	    {% comment %} Sign up part 1 {% endcomment %}
+		<div class="form_1 data_info">
+			<h2>Signup Info</h2>
+			{% comment %} <form action='/signup' method='post'> {% endcomment %}
+				<div class="form_container">
+                    <div class="input_wrap">
+						<label for="email">Email Address</label>
+						<input type="text" name="email" class="input" id="email" Required>
+					</div>
+					<div class="input_wrap">
+						<label for="password">Password</label>
+						<input type="password" name="password1" class="input" id="password" Required>
+					</div>
+					<div class="input_wrap">
+						<label for="confirm_password">Confirm Password</label>
+						<input type="password" name="password2" class="input" id="confirm_password" Required>
+					</div>
+				</div>		
+		</div>
+		
+	    {% comment %} Sign up part 2 {% endcomment %}      
+        <div class="form_2 data_info" style="display: none;">
+			<h2>Personal Info</h2>
+				<div class="form_container">
+					<div class="input_wrap">
+						<label for="first_name">First Name</label>
+						<input type="text" name="fname" class="input" id="first_name" Required>
+					</div>
+					<div class="input_wrap">
+						<label for="last_name">Last Name</label>
+						<input type="text" name="lname" class="input" id="last_name" Required>
+					</div>
+                    <div class="input_wrap">
+						<label for="gender">Gender</label>
+						<input type="text" name="gender" class="input" id="gender" Required>
+					</div>
+					
+				</div>
+			
+		</div>
+
+        {% comment %} Sign up part 3 {% endcomment %}       
+		<div class="form_3 data_info" style="display: none;">
+			<h2>Professional Info</h2>
+				<div class="form_container">
+					<div class="input_wrap">
+						<label for="degree">Degree</label>
+						<input type="text" name="degree" class="input" id="degree" Required>
+					</div>
+					<div class="input_wrap">
+						<label for="branch">Branch</label>
+						<input type="text" name="branch" class="input" id="branch" Required>
+					</div>
+					<div class="input_wrap">
+						<label for="enrollment">Enrollment No.</label>
+						<input type="text" name="enrollment" class="input" id="enrollment" Required>
+					</div>
+				</div>
+			{% comment %} </form> {% endcomment %}
+		</div>
+	</div>
+	<div class="btns_wrap">
+		<div class="common_btns form_1_btns">
+			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		</div>
+		<div class="common_btns form_2_btns" style="display: none;">
+			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="button" class="btn_next">Next <span class="icon"><ion-icon name="arrow-forward-sharp"></ion-icon></span></button>
+		</div>
+		<div class="common_btns form_3_btns" style="display: none;">
+			<button type="button" class="btn_back"><span class="icon"><ion-icon name="arrow-back-sharp"></ion-icon></span>Back</button>
+			<button type="submit" class="btn_done">Done</button>
+		</div>
+	</div>
+ </div>
+</form>
+{% comment %} <div class="modal_wrapper">
+	<div class="shadow"></div>
+	<div class="success_wrap">
+		<span class="modal_icon"><ion-icon name="checkmark-sharp"></ion-icon></span>
+		<p>You have successfully completed the process.</p>
+	</div>
+</div> {% endcomment %}
+
+<script type="text/javascript" src="static/js/signup.js"></script>
+
+<script>
+    setTimeout(function(){
+        if ($('msg').length>0)
+        {$('msg').remove();
+        }
+    },2000)
+</script>
+
+</body>
+</html>

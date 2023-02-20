@@ -1,0 +1,40 @@
+.curves {
+
+    position: relative;
+    bottom: -25;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    /* background: #ffffff; */
+    background: url("images\backgrounds\bg-3.jpeg");    
+}
+
+.curves svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 164px;
+    transform: translate(80% 20%);
+}
+
+.curves .shape-fill {
+    fill : #313338;
+}
+
+/** For mobile devices **/
+@media (max-width: 767px) {
+    .curves svg {
+        width: calc(211% + 1.3px);
+        height: 164px;
+    }
+}
+
+.bg-2 {
+    background: #313338;
+  }
+
+#black{
+    color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
